@@ -1,6 +1,6 @@
 FROM r-base:latest
 
-MAINTAINER Winston Chang "winston@rstudio.com"
+MAINTAINER Alper Kucukural "alper.kucukural@umassmed.edu"
 
 # Install dependencies and Download and install shiny server
 RUN apt-get update && apt-get install -y -t unstable \
