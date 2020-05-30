@@ -22,6 +22,8 @@ EXPOSE 3838
 
 RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
 RUN apt-get update && apt-get install -y -t unstable git vim wget libssl-dev libv8-dev libxml2-dev 
+RUN R -e ' install.packages("devtools");'
+RUN R -e ' devtools::install_github("rstudio/d3heatmap");'
 RUN R -e ' install.packages("BiocManager"); BiocManager::install("debrowser");'
 
 RUN git clone https://github.com/UMMS-Biocore/debrowser.git /srv/shiny-server/debrowser
